@@ -29,45 +29,15 @@ syn keyword FennelBoolean false
 
 " Fennel special forms
 syn keyword FennelSpecialForm #
-syn keyword FennelSpecialForm %
-syn keyword FennelSpecialForm ->
-syn keyword FennelSpecialForm ->>
-syn keyword FennelSpecialForm -?>
-syn keyword FennelSpecialForm -?>>
-syn keyword FennelSpecialForm .
-syn keyword FennelSpecialForm ..
-syn keyword FennelSpecialForm //
-syn keyword FennelSpecialForm :
-syn keyword FennelSpecialForm <
-syn keyword FennelSpecialForm <=
-syn keyword FennelSpecialForm =
-syn keyword FennelSpecialForm >
-syn keyword FennelSpecialForm >=
-syn keyword FennelSpecialForm ^
-syn keyword FennelSpecialForm and
 syn keyword FennelSpecialForm comment
-syn keyword FennelSpecialForm do
 syn keyword FennelSpecialForm doc
-syn keyword FennelSpecialForm doto
-syn keyword FennelSpecialForm each
 syn keyword FennelSpecialForm eval-compiler
-syn keyword FennelSpecialForm fn
-syn keyword FennelSpecialForm for
-syn keyword FennelSpecialForm global
 syn keyword FennelSpecialForm hashfn
-syn keyword FennelSpecialForm if
 syn keyword FennelSpecialForm include
 syn keyword FennelSpecialForm lambda
 syn keyword FennelSpecialForm length
-syn keyword FennelSpecialForm let
-syn keyword FennelSpecialForm local
 syn keyword FennelSpecialForm lua
-syn keyword FennelSpecialForm macro
-syn keyword FennelSpecialForm macros
-syn keyword FennelSpecialForm match
-syn keyword FennelSpecialForm not
 syn keyword FennelSpecialForm not=
-syn keyword FennelSpecialForm or
 syn keyword FennelSpecialForm partial
 syn keyword FennelSpecialForm quote
 syn keyword FennelSpecialForm require-macros
@@ -75,19 +45,49 @@ syn keyword FennelSpecialForm set
 syn keyword FennelSpecialForm set-forcibly!
 syn keyword FennelSpecialForm tset
 syn keyword FennelSpecialForm values
-syn keyword FennelSpecialForm var
-syn keyword FennelSpecialForm when
-syn keyword FennelSpecialForm while
 syn keyword FennelSpecialForm ~=
 syn keyword FennelSpecialForm λ
+
+syntax keyword FennelSpecialForm
+    \ .
+    \ :
+    \ and
+    \ do
+    \ doto
+    \ each
+    \ fn
+    \ for
+    \ global
+    \ if
+    \ let
+    \ local
+    \ macro
+    \ macros
+    \ match
+    \ or
+    \ not
+    \ when
+    \ while
+    \ var
+    \ ->
+    \ ->>
+    \ -?>
+    \ -?>>
 
 syntax keyword FennelOperator
     \ +
     \ -
     \ /
+    \ //
     \ *
     \ =
     \ +
+    \ %
+    \ <
+    \ >
+    \ >=
+    \ <=
+    \ ..
 
 " Lua keywords
 syntax keyword LuaSpecialValue
@@ -232,7 +232,7 @@ hi def link FennelSymbol Identifier
 hi def link FennelNumber Number
 hi def link FennelConstant Constant
 hi def link FennelKeyword Keyword
-hi def link FennelSpecialForm Special
+hi def link FennelSpecialForm Conditional 
 hi def link LuaSpecialValue Special
 hi def link FennelString String
 hi def link FennelBuffer String
