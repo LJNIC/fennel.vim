@@ -30,16 +30,12 @@ syn keyword FennelBoolean false
 " Fennel special forms
 syn keyword FennelSpecialForm #
 syn keyword FennelSpecialForm %
-syn keyword FennelSpecialForm *
-syn keyword FennelSpecialForm +
-syn keyword FennelSpecialForm -
 syn keyword FennelSpecialForm ->
 syn keyword FennelSpecialForm ->>
 syn keyword FennelSpecialForm -?>
 syn keyword FennelSpecialForm -?>>
 syn keyword FennelSpecialForm .
 syn keyword FennelSpecialForm ..
-syn keyword FennelSpecialForm /
 syn keyword FennelSpecialForm //
 syn keyword FennelSpecialForm :
 syn keyword FennelSpecialForm <
@@ -84,6 +80,14 @@ syn keyword FennelSpecialForm when
 syn keyword FennelSpecialForm while
 syn keyword FennelSpecialForm ~=
 syn keyword FennelSpecialForm λ
+
+syntax keyword FennelOperator
+    \ +
+    \ -
+    \ /
+    \ *
+    \ =
+    \ +
 
 " Lua keywords
 syntax keyword LuaSpecialValue
@@ -152,46 +156,6 @@ syntax keyword LuaSpecialValue
 	\ io.tmpfile
 	\ io.type
 	\ io.write
-	\ math
-	\ math.abs
-	\ math.acos
-	\ math.asin
-	\ math.atan
-	\ math.ceil
-	\ math.cos
-	\ math.deg
-	\ math.exp
-	\ math.floor
-	\ math.fmod
-	\ math.huge
-	\ math.log
-	\ math.max
-	\ math.maxinteger
-	\ math.min
-	\ math.mininteger
-	\ math.modf
-	\ math.pi
-	\ math.rad
-	\ math.random
-	\ math.randomseed
-	\ math.sin
-	\ math.sqrt
-	\ math.tan
-	\ math.tointeger
-	\ math.type
-	\ math.ult
-	\ os
-	\ os.clock
-	\ os.date
-	\ os.difftime
-	\ os.execute
-	\ os.exit
-	\ os.getenv
-	\ os.remove
-	\ os.rename
-	\ os.setlocale
-	\ os.time
-	\ os.tmpname
 	\ package
 	\ package.config
 	\ package.cpath
@@ -262,6 +226,7 @@ syntax match FennelError "]\|}\|)"
 syntax sync fromstart
 
 " Highlighting
+hi def link FennelOperator Operator
 hi def link FennelComment Comment
 hi def link FennelSymbol Identifier
 hi def link FennelNumber Number
